@@ -22,6 +22,6 @@ object Row:
       text.getOrElse(Columns.Date, ""),
       text.getOrElse(Columns.Market, ""),
       text.getOrElse(Columns.Commodity, ""),
-      text.getOrElse(Columns.Price, 0.0),
-      text.getOrElse(Columns.UsdPrice, 0.0)
+      numbers.getOrElse(Columns.Price, 0.0),
+      numbers.getOrElse(Columns.UsdPrice, 0.0)
     )
