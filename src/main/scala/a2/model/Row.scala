@@ -1,0 +1,24 @@
+package a2.model
+
+object Columns:
+  
+  val Date: String = "date"
+  val Market: String = "market"
+  val Commodity: String = "commodity"
+  val Price: String = "price"
+  val UsdPrice: String = "usdprice"
+  val Required: Vector[String] = Vector(Date, Market, Commodity, Price, UsdPrice)
+  val Numeric: Vector[String] = Vector(Price, UsdPrice)
+  
+case class Row(date: String, market: String, commodity: String, price: Double, usdPrice: Double)
+
+object Row:
+  
+  def from(text: Map[String, String], numbers: Map[String, Double]): Row =
+    Row(
+      text.getOrElse(Columns.Date, "")
+      text.getOrElse(Columns.Market, "")
+      text.getOrElse(Columns.Commodity, "")
+      text.getOrElse(Columns.Price, "")
+      text.getOrElse(Columns.UsdPrice, "")
+    )
