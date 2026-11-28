@@ -16,11 +16,12 @@ case class Row(date: String, market: String, commodity: String, price: Double, u
 
 //row construction
 object Row:
+  //Builds the Row from trimmed text values and parsed numbers, keyed by the column names
   def from(text: Map[String, String], numbers: Map[String, Double]): Row =
     Row(
-      text.getOrElse(Columns.Date, "")
-      text.getOrElse(Columns.Market, "")
-      text.getOrElse(Columns.Commodity, "")
-      text.getOrElse(Columns.Price, 0.0)
+      text.getOrElse(Columns.Date, ""),
+      text.getOrElse(Columns.Market, ""),
+      text.getOrElse(Columns.Commodity, ""),
+      text.getOrElse(Columns.Price, 0.0),
       text.getOrElse(Columns.UsdPrice, 0.0)
     )
