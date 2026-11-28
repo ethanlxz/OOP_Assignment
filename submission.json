@@ -1,10 +1,10 @@
 {
-  "group": 0,
-  "dataset": 0,
-  "distinction": "none",
-  "numericColumns": ["ColumnA", "ColumnB"],
-  "q1": { "entity": "EntityColumn", "metric": "ColumnA", "agg": "sum" },
-  "q2": { "group": "CategoryColumn", "value": "ColumnA" },
-  "q3": { "entity": "EntityColumn", "attr1": "ColumnA", "attr2": "ColumnB", "op": "<", "threshold": "mean" },
-  "q4": { "entity": "EntityColumn", "period": "PeriodColumn", "value": "ColumnA" }
+  "group": 12,
+  "dataset": 1,
+  "distinction": "D1",
+  "numericColumns": ["usdprice", "price"],
+  "q1": { "entity": "market", "metric": "usdprice", "agg": "mean" },
+  "q2": { "group": "commodity", "value": "usdprice" },
+  "q3": { "entity": "market", "attr1": "usdprice", "attr2": "price", "op": ">", "threshold": "mean" },
+  "q4": { "entity": "market", "period": "date", "value": "usdprice" }
 }
